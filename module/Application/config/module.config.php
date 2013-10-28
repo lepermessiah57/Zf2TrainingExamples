@@ -50,6 +50,17 @@ return array(
                     ),
                 ),
             ),
+            'helloWorld' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/hello_world',
+                    'defaults' => array(
+                        'controller'    => 'HelloWorld',
+                        'action'        => 'helloWorld',
+                    ),  
+
+                )
+            )
         ),
     ),
     'service_manager' => array(
@@ -73,7 +84,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'HelloWorld'                   => 'Application\Controller\HelloWorldController'
         ),
     ),
     'view_manager' => array(
