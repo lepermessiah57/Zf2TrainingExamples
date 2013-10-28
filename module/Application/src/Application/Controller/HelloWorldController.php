@@ -11,4 +11,9 @@ class HelloWorldController extends AbstractActionController
     {
         return array();
     }
+    
+    public function helloMyNameIsAction(){
+    	$name = $this->params()->fromRoute('name');
+    	return array('name'=>$name);
+    }
 }

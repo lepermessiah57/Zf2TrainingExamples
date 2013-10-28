@@ -60,6 +60,17 @@ return array(
                     ),  
 
                 )
+            ),
+            'helloMyNameIs' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/hello/my/name/is/:name',
+                    'defaults' => array(
+                        'controller'    => 'HelloWorld',
+                        'action'        => 'helloMyNameIs',
+                    ),  
+
+                )
             )
         ),
     ),
