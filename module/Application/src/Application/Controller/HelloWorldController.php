@@ -3,6 +3,7 @@
 namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\JsonModel;
 use Zend\View\Model\ViewModel;
 
 class HelloWorldController extends AbstractActionController
@@ -26,5 +27,15 @@ class HelloWorldController extends AbstractActionController
         $model = new ViewModel($data);
         $model->setTemplate('/application/hello-world/hello-my-name-is.phtml');
     	return $model;
+    }
+
+    public function helloJsonAction(){
+        $post = $this->getRequest()->getPost();
+        $name = $post->get('name');
+
+        $data = array('name'=>$name);
+
+        $model = new JsonModel($data);
+        return $model;
     }
 }

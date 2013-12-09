@@ -82,6 +82,17 @@ return array(
                     ),
 
                 )
+            ),
+            'hello_json' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/hello/json',
+                    'defaults' => array(
+                        'controller'    => 'HelloWorld',
+                        'action'        => 'helloJson',
+                    ),
+
+                )
             )
         ),
     ),
@@ -124,6 +135,10 @@ return array(
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+        //This is required for json rendering
+        'strategies' => array(
+            'ViewJsonStrategy',
         ),
     ),
     // Placeholder for console routes
