@@ -71,6 +71,17 @@ return array(
                     ),  
 
                 )
+            ),
+            'hello' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/hello',
+                    'defaults' => array(
+                        'controller'    => 'HelloWorld',
+                        'action'        => 'hello',
+                    ),
+
+                )
             )
         ),
     ),
