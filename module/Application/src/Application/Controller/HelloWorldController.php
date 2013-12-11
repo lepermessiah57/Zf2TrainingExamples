@@ -19,8 +19,8 @@ class HelloWorldController extends AbstractActionController
     }
 
     public function helloAction(){
-    	$post = $this->getRequest()->getPost();
-    	$name = $post->get('name');
+    	$query = $this->getRequest()->getQuery();
+    	$name = $query->get('name');
 
         $data = array('name'=>$name);
 
