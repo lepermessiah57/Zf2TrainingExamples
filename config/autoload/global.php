@@ -13,4 +13,6 @@
 
 return array(
     // ...
+
+    'connection_string' => 'it would go here or in a file named *(database).global.php'
 );

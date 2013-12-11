@@ -14,6 +14,7 @@ class DataBaseManager {
         $this->conn->insert('Users', $model->getParams());
         $this->conn->commit();
         $this->conn->close();
+        return 1;
     }
 
     public function get($id){

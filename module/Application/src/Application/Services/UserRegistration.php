@@ -24,7 +24,7 @@ class UserRegistration implements ServiceLocatorAwareInterface{
         $user = new User();
         $hydrator = new ClassMethods();
         $hydrator->hydrate([$username, $password, $email, $name], $user);
-        $this->getServiceLocator()->get('DataBaseManager')->insert($user);
+        return $this->getServiceLocator()->get('DataBaseManager')->insert($user);
     }
 
 }

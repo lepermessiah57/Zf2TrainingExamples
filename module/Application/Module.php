@@ -9,6 +9,7 @@
 
 namespace Application;
 
+use Application\Services\UserLookupService;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
@@ -29,7 +30,13 @@ class Module
     public function getServiceConfig(){
         return [
             'factories'=>[
-                'DataBaseManager' => 'Application\DataAccess\DataBaseManagerFactory'
+                'DataBaseManager' => 'Application\DataAccess\DataBaseManagerFactory',
+                'UserLookService' => function($sm){
+                    return new UserLookupService($sm->get('DataBaseManager'));
+                }
+            ],
+            'invokables' => [
+                'UserRegistration' => 'Application\Services\UserRegistration'
             ]
         ];
     }
