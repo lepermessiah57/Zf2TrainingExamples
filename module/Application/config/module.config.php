@@ -93,6 +93,19 @@ return array(
                     ),
 
                 )
+            ),
+            'book' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/book[/:id]',
+                    'constraints' => array(
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller'    => 'BookRest',
+                    ),
+
+                )
             )
         ),
     ),
@@ -118,7 +131,9 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'HelloWorld'                   => 'Application\Controller\HelloWorldController'
+            'HelloWorld'                   => 'Application\Controller\HelloWorldController',
+            'BookRest'                     => 'Application\Controller\BookRestController'
+
         ),
     ),
     'view_manager' => array(
