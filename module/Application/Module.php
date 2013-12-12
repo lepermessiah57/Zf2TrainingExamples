@@ -33,7 +33,8 @@ class Module
                 'DataBaseManager' => 'Application\DataAccess\DataBaseManagerFactory',
                 'UserLookService' => function($sm){
                     return new UserLookupService($sm->get('DataBaseManager'));
-                }
+                },
+                'Connection' => 'Application\DataAccess\ConnectionFactory'
             ],
             'invokables' => [
                 'UserRegistration' => 'Application\Services\UserRegistration'
