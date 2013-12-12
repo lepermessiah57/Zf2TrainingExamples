@@ -50,28 +50,37 @@ return array(
                     ),
                 ),
             ),
-            'helloWorld' => array(
+            'user' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route' => '/hello_world',
+                    'route' => '/user',
                     'defaults' => array(
-                        'controller'    => 'HelloWorld',
-                        'action'        => 'helloWorld',
+                        'controller'    => 'User',
+                        'action'        => 'index',
                     ),  
-
-                )
+                ),
+//                'may_terminate' => true,
+//                'child_routes' => array(
+//                    'registration' => array(
+//                        'type'    => 'literal',
+//                        'options' => array(
+//                            'route'    => '/register',
+//                            'defaults' => array(
+//                                'action' => 'register'
+//                            ),
+//                        ),
+//                    ),
+//                    'lookup' => array(
+//                        'type'    => 'literal',
+//                        'options' => array(
+//                            'route'    => '/lookup',
+//                            'defaults' => array(
+//                                'action' => 'lookup'
+//                            ),
+//                        ),
+//                    )
+//                ),
             ),
-            'helloMyNameIs' => array(
-                'type' => 'segment',
-                'options' => array(
-                    'route' => '/hello/my/name/is/:name',
-                    'defaults' => array(
-                        'controller'    => 'HelloWorld',
-                        'action'        => 'helloMyNameIs',
-                    ),  
-
-                )
-            )
         ),
     ),
     'service_manager' => array(
@@ -96,7 +105,7 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'HelloWorld'                   => 'Application\Controller\HelloWorldController'
+            'User'                         => 'Application\Controller\UserController'
         ),
     ),
     'view_manager' => array(
