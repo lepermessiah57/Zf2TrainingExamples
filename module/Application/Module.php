@@ -31,7 +31,7 @@ class Module
         return [
             'factories'=>[
                 'DataBaseManager' => 'Application\DataAccess\DataBaseManagerFactory',
-                'UserLookService' => function($sm){
+                'UserLookupService' => function($sm){
                     return new UserLookupService($sm->get('DataBaseManager'));
                 },
                 'Connection' => 'Application\DataAccess\ConnectionFactory'

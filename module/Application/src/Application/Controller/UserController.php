@@ -7,7 +7,7 @@ use Zend\View\Model\JsonModel;
 
 class UserController extends AbstractActionController{
 
-    public function registerUserAction(){
+    public function registerAction(){
         $user_registration = $this->serviceLocator->get('UserRegistration');
         $post = $this->getRequest()->getPost();
         $username = $post->get('username');
@@ -29,6 +29,6 @@ class UserController extends AbstractActionController{
         $user_id = $query['user_id'];
         $user = $user_lookup_service->lookupUser($user_id);
 
-        return new JsonModel(['user'=>$user]);
+        return new JsonModel(['user'=>$user->getParams()]);
     }
 } 

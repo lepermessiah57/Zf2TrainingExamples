@@ -59,27 +59,27 @@ return array(
                         'action'        => 'index',
                     ),  
                 ),
-//                'may_terminate' => true,
-//                'child_routes' => array(
-//                    'registration' => array(
-//                        'type'    => 'literal',
-//                        'options' => array(
-//                            'route'    => '/register',
-//                            'defaults' => array(
-//                                'action' => 'register'
-//                            ),
-//                        ),
-//                    ),
-//                    'lookup' => array(
-//                        'type'    => 'literal',
-//                        'options' => array(
-//                            'route'    => '/lookup',
-//                            'defaults' => array(
-//                                'action' => 'lookup'
-//                            ),
-//                        ),
-//                    )
-//                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'registration' => array(
+                        'type'    => 'literal',
+                        'options' => array(
+                            'route'    => '/register',
+                            'defaults' => array(
+                                'action' => 'register'
+                            ),
+                        ),
+                    ),
+                    'lookup' => array(
+                        'type'    => 'literal',
+                        'options' => array(
+                            'route'    => '/lookup',
+                            'defaults' => array(
+                                'action' => 'lookup'
+                            ),
+                        ),
+                    )
+                ),
             ),
         ),
     ),
@@ -122,6 +122,9 @@ return array(
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+        'strategies' => array(
+            'ViewJsonStrategy',
         ),
     ),
     // Placeholder for console routes
