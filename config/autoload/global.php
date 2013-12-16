@@ -12,5 +12,17 @@
  */
 
 return array(
-    // ...
+    'email' => array(
+        'SmtpOptions' =>
+            new Zend\Mail\Transport\SmtpOptions(array(
+                'name'              => 'gmail',
+                'host'              => 'smtp.gmail.com',
+                'connection_class'  => 'login',
+                'connection_config' => array(
+                    'username'      => '',
+                    'password'      => '',
+                    'ssl'           => 'tls',
+                ),
+            ))
+    )
 );
