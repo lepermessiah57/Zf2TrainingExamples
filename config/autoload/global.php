@@ -17,10 +17,11 @@ return array(
             new Zend\Mail\Transport\SmtpOptions(array(
                 'name'              => 'gmail',
                 'host'              => 'smtp.gmail.com',
+                'port'              => 587,
                 'connection_class'  => 'login',
                 'connection_config' => array(
-                    'username'      => '',
-                    'password'      => '',
+                    'username'      => '', //put username here
+                    'password'      => '', //put password here
                     'ssl'           => 'tls',
                 ),
             ))

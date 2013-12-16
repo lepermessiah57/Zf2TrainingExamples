@@ -36,4 +36,12 @@ class Module
             ),
         );
     }
+
+    public function getServiceConfig(){
+        return [
+            'factories' => [
+                'Transport' => 'Application\Email\TransportFactory'
+            ]
+        ];
+    }
 }
