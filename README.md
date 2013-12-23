@@ -1,7 +1,7 @@
 # Zend Framework 2 Training examples
 
 ## List of examples as branches
- * example1 - 
+ * example1 - Hello World and routing
  * example2 - Request/Response and Controllers
  * example3 - Service Locator
  * example4 - Forms and file uploading
