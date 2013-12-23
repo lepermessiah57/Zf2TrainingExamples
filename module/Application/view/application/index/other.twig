@@ -1,0 +1,41 @@
+{% extends 'layout/layout.twig' %}
+
+{% block content %}
+
+	<table>
+		<tr><th>Users</th> </tr>
+		{% for user in users|sort %}
+		<tr><td>{{user}}</td></tr>
+		{% endfor %}
+	</table>
+	<br/>
+	<div>
+		Foo: {{foo}}
+	</div>
+
+	<div>
+		Using the date filter we can display a number of dates:
+		<ul>
+			<li>{{date | date('Y-m-d')}} </li>
+			<li>{{date | date('M-d-Y h:m:i')}} </li>
+		</ul>
+	</div>
+
+	<div>
+		Here is some tests<br/>
+		If error (null)
+		<div>
+			{% if error is not null %}
+			{{error}}
+			{% endif %}
+		</div>
+
+		If exception
+		<div>
+			{% if exception is not null %}
+				{{exception.getTraceAsString()}}
+			{% endif %}
+		</div>
+	</div>
+
+{% endblock %}

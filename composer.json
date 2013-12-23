@@ -6,9 +6,16 @@
         "framework",
         "zf2"
     ],
+    "repositories" : [
+        {
+            "type"  : "composer",
+            "url"   : "http://10.224.41.19/"
+        }
+    ],
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.2.*"
+        "zendframework/zendframework": "2.2.*",
+        "zf-commons/zfc-twig": "dev-1.2rc2"
     }
 }

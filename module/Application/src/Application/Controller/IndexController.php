@@ -18,4 +18,9 @@ class IndexController extends AbstractActionController
     {
         return new ViewModel();
     }
+
+    public function otherAction(){
+    	$data = array('foo'=>'bar','users'=>array('matt','bob','mike', 'adam'), 'date'=>new \DateTime(), 'error'=>null, 'exception'=>new \Exception());
+    	return new ViewModel($data);
+    }
 }
