@@ -104,6 +104,15 @@ return array(
                             'action'     => 'console'
                         )
                     )
+                ),
+                'flagsAndInput' => array(
+                    'options' => array(
+                        'route'    => 'console email [--verbose] <email>',
+                        'defaults' => array(
+                            'controller' => 'Application\Controller\Index',
+                            'action'     => 'consoleWithFlagsAndParameters'
+                        )
+                    )  
                 )
             ),
         ),

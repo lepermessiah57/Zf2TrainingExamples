@@ -20,6 +20,18 @@ class IndexController extends AbstractActionController
     }
 
     public function consoleAction(){
-    	return "This is the console route!";
+    	return "This is the console route!\n";
+    }
+
+    public function consoleWithFlagsAndParametersAction(){
+    	$request = $this->getRequest();
+    	$email = $request->getParam('email');
+    	$flag = $request->getParam('verbose');
+
+    	if($flag){
+    		return "An email has been sent to ${email}\n";
+    	}else{
+    		return "Email sent \n";
+    	}
     }
 }
