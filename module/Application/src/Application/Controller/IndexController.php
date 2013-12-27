@@ -11,11 +11,31 @@ namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\View\Model\JsonModel;
+use Zend\Session\Container;
 
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
         return new ViewModel();
+    }
+
+    public function addSessionAction(){
+		$request = $this->getRequest()->getPost();
+		$key = $request->get('key');
+		$value = $request->get('value');
+		$container = new Container('controller');
+		$container->$key = $value;
+		return new JsonModel();
+    }
+
+    public function dumpSessionAction(){
+    	$data = array();
+    	$container = new Container('controller');
+    	foreach($container as $key => $value){
+    		$data[$key] = $value;
+    	}
+    	return new ViewModel(array('data'=>$data));
     }
 }
