@@ -38,4 +38,10 @@ class IndexController extends AbstractActionController
     	}
     	return new ViewModel(array('data'=>$data));
     }
+
+    public function clearSessionAction(){
+    	$container = new Container('controller');
+    	$container->getManager()->getStorage()->clear('controller');
+    	return $this->redirect()->toRoute('view');
+    }
 }
