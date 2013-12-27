@@ -19,6 +19,8 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+        $eventManager->attach('dispatch', array($this,'logBefore'), 100);
+        $eventManager->attach('dispatch', array($this,'logAfter'), 1);
     }
 
     public function getConfig()
@@ -35,5 +37,13 @@ class Module
                 ),
             ),
         );
+    }
+
+    public function logBefore($event){
+        error_log('Before the dispatch');
+    }
+
+    public function logAfter($event){
+        error_log('After the dispatch');
     }
 }
