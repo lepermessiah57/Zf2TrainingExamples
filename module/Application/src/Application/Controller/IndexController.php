@@ -27,7 +27,7 @@ class IndexController extends AbstractActionController
 		$value = $request->get('value');
 		$container = new Container('controller');
 		$container->$key = $value;
-		return new JsonModel();
+		return $this->redirect()->toRoute('view');
     }
 
     public function dumpSessionAction(){
