@@ -21,6 +21,7 @@ class Module
         $moduleRouteListener->attach($eventManager);
         $eventManager->attach('dispatch', array($this,'logBefore'), 100);
         $eventManager->attach('dispatch', array($this,'logAfter'), 1);
+        $eventManager->attach('dispatch.error', array('Application\Event\MyEvent', 'handleEvent'), 100);
     }
 
     public function getConfig()

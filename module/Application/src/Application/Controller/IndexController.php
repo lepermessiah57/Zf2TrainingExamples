@@ -19,4 +19,8 @@ class IndexController extends AbstractActionController
     	sleep(1);
         return new ViewModel();
     }
+
+    public function exceptionAction(){
+    	throw new \Exception();
+    }
 }
