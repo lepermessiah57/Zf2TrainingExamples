@@ -8,7 +8,7 @@
  * example5 - Email
  * example6 - Doctrine (todo)
  * example7 - Twig
- * example8 - Events (todo)
+ * example8 - Events
  * example9 - Sessions
  * example10 - Authorization, Authentication (todo)
  * example11 - Console Routing
