@@ -24,6 +24,7 @@ class IndexController extends AbstractActionController
     }
 
     public function consoleWithFlagsAndParametersAction(){
+    	//TODO don't allow http requests
     	$request = $this->getRequest();
     	$email = $request->getParam('email');
     	$flag = $request->getParam('verbose');
