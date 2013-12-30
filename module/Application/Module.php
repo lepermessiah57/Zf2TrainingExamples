@@ -36,4 +36,13 @@ class Module
             ),
         );
     }
+
+    public function getViewHelperConfig()
+    {
+        return array(
+           'invokables' => array(
+              'uppercase' => 'Application\ViewHelper\UpperCase',
+           ),
+        );
+   }
 }
