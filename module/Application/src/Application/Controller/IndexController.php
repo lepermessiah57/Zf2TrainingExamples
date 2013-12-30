@@ -24,8 +24,11 @@ class IndexController extends AbstractActionController
     }
 
     public function consoleWithFlagsAndParametersAction(){
-    	//TODO don't allow http requests
     	$request = $this->getRequest();
+
+    	if(!$request instanceof \Zend\Console\Request){
+    		throw new \Exception('This is only a console request');
+    	}
     	$email = $request->getParam('email');
     	$flag = $request->getParam('verbose');
 
