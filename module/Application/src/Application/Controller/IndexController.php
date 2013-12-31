@@ -59,5 +59,9 @@ class IndexController extends AbstractActionController
     	$foo = $this->params()->fromQuery('foo');
     	die();
     }
+
+    public function redirectAction(){
+    	return $redirect = $this->redirect()->toUrl('/application/index/other');
+    }
 }
 
