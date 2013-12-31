@@ -13,5 +13,5 @@
  * example10 - Authorization, Authentication (todo)
  * example11 - Console Routing
  * example12 - View helpers
- * example13 - Controller Plugins (todo)
+ * example13 - Controller Plugins
  * example14 - Guzzle (todo)
