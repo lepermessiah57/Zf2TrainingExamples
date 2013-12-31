@@ -75,6 +75,9 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController'
         ),
+        'aliases' => array(
+            'index'=>'Application\Controller\Index'
+        )
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
