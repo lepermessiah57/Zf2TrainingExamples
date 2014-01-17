@@ -7,8 +7,17 @@
         "zf2"
     ],
     "homepage": "http://framework.zend.com/",
+    "minimum-stability" : "dev",
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.8.*"
+    },
+    "autoload": {
+        "psr-0" : {
+            "Application"     : ["module/Application/src","module/Application/test"]
+        }
     }
 }
