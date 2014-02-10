@@ -13,7 +13,7 @@ class HelloWorldController extends AbstractActionController
     }
     
     public function helloMyNameIsAction(){
-    	$name = $this->params()->fromRoute('name');
+    	$name = $this->params()->fromRoute('name', 'Default');
     	return array('name'=>$name);
     }
 }

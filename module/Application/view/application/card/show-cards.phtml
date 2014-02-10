@@ -1,0 +1,10 @@
+Listing Cards <br/>
+
+<?php
+
+    foreach($cards as $card){
+        echo "<div>" . $card->getSuit() . " " . $card->getValue() . "</div>";
+
+    }
+
+?>

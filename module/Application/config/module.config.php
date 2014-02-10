@@ -64,11 +64,33 @@ return array(
             'helloMyNameIs' => array(
                 'type' => 'segment',
                 'options' => array(
-                    'route' => '/hello/my/name/is/:name',
+                    'route' => '/hello/[:name]',
                     'defaults' => array(
                         'controller'    => 'HelloWorld',
                         'action'        => 'helloMyNameIs',
                     ),  
+
+                )
+            ),
+            'showCards' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/card[/:action]',
+                    'defaults' => array(
+                        'controller'    => 'Card',
+                        'action'        => 'showCards',
+                    ),
+
+                )
+            ),
+            'showCard' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/card/:value',
+                    'defaults' => array(
+                        'controller'    => 'Card',
+                        'action'        => 'showCard',
+                    ),
 
                 )
             )
@@ -96,7 +118,8 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'HelloWorld'                   => 'Application\Controller\HelloWorldController'
+            'HelloWorld'                   => 'Application\Controller\HelloWorldController',
+            'Card'                   => 'Application\Controller\CardController'
         ),
     ),
     'view_manager' => array(
