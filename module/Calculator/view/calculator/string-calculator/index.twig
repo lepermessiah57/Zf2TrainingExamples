@@ -2,7 +2,13 @@
 
 <div>Result <span>{{ result }}</span></div>
 
-<form method="POST" name="Calculate">
-    <input type="text" name="operation" />
-    <input type="submit" value="Calculate!" />
-</form>
+{#<form method="POST" name="Calculate">#}
+    {#<input type="text" name="operation" />#}
+    {#<input type="submit" value="Calculate!" />#}
+{#</form>#}
+
+{% do form.prepare() %}
+    {{ form().openTag(form) | raw }}
+        {{ formRow(form.get('operation')) }}
+        {{ formRow(form.get('submit')) }}
+    {{ form().closeTag(form) | raw }}
