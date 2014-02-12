@@ -10,34 +10,15 @@ class StringCalculatorController extends AbstractActionController
 
     public function indexAction()
     {
+        /**
+         * @var \Calculator\Services\Calculator $calculator
+         */
         $result = 0.0;
 
         if($this->getRequest()->isPost()){
             $operation = $this->params()->fromPost('operation');
-            $operationArray = explode(" " , $operation);
-            $operandA = $operationArray[0];
-            $operandB = $operationArray[2];
-            $operator = $operationArray[1];
-
-            switch ($operator) {
-                case "+" :
-                    $result = $operandA + $operandB;
-                    break;
-                case "-" :
-                    $result = $operandA - $operandB;
-                    break;
-                case "/" :
-                    $result = $operandA / $operandB;
-                    break;
-                case "*" :
-                    $result = $operandA * $operandB;
-                    break;
-                case "%" :
-                    $result = $operandA % $operandB;
-                    break;
-                default:
-                    throw new \Exception('Stop breaking');
-            }
+            $calculator = $this->getServiceLocator()->get('Calculator');
+            $result = $calculator->calculateString($operation);
         }
         return new ViewModel(['result'=>$result, 'operation' => $operation]);
     }

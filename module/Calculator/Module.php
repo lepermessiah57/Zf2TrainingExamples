@@ -18,4 +18,12 @@ class Module
             ),
         );
     }
+
+    public function getServiceConfig(){
+        return [
+            'invokables' => [
+                'Calculator' => 'Calculator\Services\Calculator'
+            ]
+        ];
+    }
 }
