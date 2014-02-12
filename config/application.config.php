@@ -8,7 +8,8 @@
 return array(
     'modules' => array(
         'Application',
-        'Calculator'
+        'Calculator',
+        'ZfcTwig'
         ),
     'module_listener_options' => array(
         'module_paths' => array(
