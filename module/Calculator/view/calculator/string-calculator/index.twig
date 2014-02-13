@@ -1,6 +1,22 @@
-<div>Operation <span>{{ operation }}</span></div>
+<div>Operation
+    <span>{{ operation }}</span>
+    &nbsp;&nbsp;&nbsp;
+    {% if memory %}
+        <form method="post" action="/calculator/clear-result">
+            <span>Stored: {{ memory }}</span>
+            <input type="hidden" name="memory" id="memory" value="{{ memory }}" />
+            <input type="submit" value="clear"/>
 
-<div>Result <span>{{ result }}</span></div>
+        </form>
+        <button id="button">Retrieve</button>
+    {% endif %}
+</div>
+
+<form method="post" action="/calculator/store-result">
+    <input type="hidden" name="result" value="{{ result }}" />
+    <div>Result <span>{{ result }}</span>&nbsp;&nbsp;&nbsp;<input type="submit" value="Store" /></div>
+
+</form>
 
 {#<form method="POST" name="Calculate">#}
     {#<input type="text" name="operation" />#}
@@ -13,7 +29,12 @@
     {{ form().openTag(myForm) | raw }}
         {{ formRow(myForm.get('operation')) }}
         {{ formRow(myForm.get('submit')) }}
-{{ formRow(myForm.get('foo')) }}
     {{ form().closeTag(myForm) | raw }}
 
 
+<script>
+    $('#button').on('click', function(){
+        var input = $('input[name="operation"]').val();
+        $('input[name="operation"]').val(input + $('#memory').val());
+    });
+</script>
