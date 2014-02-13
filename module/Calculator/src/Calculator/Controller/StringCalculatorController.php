@@ -41,7 +41,8 @@ class StringCalculatorController extends AbstractActionController
         $result = $this->params()->fromPost('result');
         $container->result = $result;
 
-        return $this->redirect()->toUrl("/calculator");
+//        return $this->redirect()->toUrl("/calculator");
+        return $this->redirect()->toRoute("home");
     }
 
     public function clearResultAction(){
