@@ -7,8 +7,13 @@
     {#<input type="submit" value="Calculate!" />#}
 {#</form>#}
 
-{% do form.prepare() %}
-    {{ form().openTag(form) | raw }}
-        {{ formRow(form.get('operation')) }}
-        {{ formRow(form.get('submit')) }}
-    {{ form().closeTag(form) | raw }}
+{% set myForm = form %}
+
+{% do myForm.prepare() %}
+    {{ form().openTag(myForm) | raw }}
+        {{ formRow(myForm.get('operation')) }}
+        {{ formRow(myForm.get('submit')) }}
+{{ formRow(myForm.get('foo')) }}
+    {{ form().closeTag(myForm) | raw }}
+
+

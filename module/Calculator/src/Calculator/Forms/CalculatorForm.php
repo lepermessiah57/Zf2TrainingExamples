@@ -2,6 +2,7 @@
 
 namespace Calculator\Forms;
 
+use Zend\Form\Element\Select;
 use Zend\Form\Element\Submit;
 use Zend\Form\Form;
 use \Zend\Form\Element\Text;
@@ -23,6 +24,11 @@ class CalculatorForm extends Form{
         $button->setValue("Calculate");
         $button->setName("submit");
         $this->add($button);
+
+        $select = new Select();
+        $select->setName("foo");
+        $select->setValueOptions(['a'=>'a','b'=>'b','c'=>'c']);
+        $this->add($select);
     }
 
 

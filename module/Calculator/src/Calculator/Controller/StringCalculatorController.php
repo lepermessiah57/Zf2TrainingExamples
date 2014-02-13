@@ -23,7 +23,8 @@ class StringCalculatorController extends AbstractActionController
             $calculator = $this->getServiceLocator()->get('Calculator');
             $result = $calculator->calculateString($operation);
         }
-        return new ViewModel(['form'=>$form, 'result'=>$result, 'operation' => $operation]);
+        $view =  new ViewModel(['form'=>$form, 'result'=>$result, 'operation' => $operation]);
+        return $view;
     }
 
     public function CalculateAction()
