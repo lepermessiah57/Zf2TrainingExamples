@@ -23,5 +23,20 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
-    ]
+    ],
+    'console' => array(
+        'router' => array(
+            'routes' => array(
+                'consoleCalculator' => array(
+                    'options' => [
+                        'route' => 'calculate <operation>',
+                        'defaults'=>[
+                            'controller' => 'StringCalculator',
+                            'action' => 'consoleCalculate'
+                        ]
+                    ]
+                )
+            ),
+        ),
+    ),
 );

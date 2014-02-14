@@ -3,6 +3,7 @@
 namespace Calculator\Controller;
 
 use Calculator\Forms\CalculatorForm;
+use Zend\Console\Request;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Session\Container;
 use Zend\View\Model\ViewModel;
@@ -23,8 +24,7 @@ class StringCalculatorController extends AbstractActionController
         if($this->getRequest()->isPost()){
             $operation = $this->params()->fromPost('operation');
             $data['operation'] = $operation;
-            $calculator = $this->getServiceLocator()->get('Calculator');
-            $data['result'] = $calculator->calculateString($operation);
+            $data['result'] = $this->calculateOperation($operation);
         }
 
         $session = new Container('calculator');
@@ -32,8 +32,7 @@ class StringCalculatorController extends AbstractActionController
             $data['memory'] = $session->result;
         }
 
-        $view =  new ViewModel($data);
-        return $view;
+        return $data;
     }
 
     public function storeResultAction(){
@@ -41,7 +40,6 @@ class StringCalculatorController extends AbstractActionController
         $result = $this->params()->fromPost('result');
         $container->result = $result;
 
-//        return $this->redirect()->toUrl("/calculator");
         return $this->redirect()->toRoute("home");
     }
 
@@ -50,6 +48,20 @@ class StringCalculatorController extends AbstractActionController
         $container->getManager()->getStorage()->clear('calculator');
 
         return $this->redirect()->toUrl("/calculator");
+    }
+
+    public function consoleCalculateAction(){
+        /**
+         * @var \Zend\Console\Request $request
+         */
+        $request = $this->getRequest();
+        $operation = $request->getParam('operation');
+        return $this->calculateOperation($operation) . "\n";
+    }
+
+    private function calculateOperation($operation) {
+        $calculator = $this->getServiceLocator()->get('Calculator');
+        return $calculator->calculateString($operation);
     }
 
 }
