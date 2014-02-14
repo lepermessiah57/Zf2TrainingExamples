@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="Application">
+            <directory>./module/*/test/**</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">
+                ./module/**
+            </directory>
+        </whitelist>
+        <blacklist>
+            <directory>./vendor/**</directory>
+        </blacklist>
+    </filter>
+
+    <php>
+        <ini name="zend.enable_gc" value="0" />
+    </php>
+</phpunit>

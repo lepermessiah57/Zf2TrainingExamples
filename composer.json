@@ -6,13 +6,21 @@
         "framework",
         "zf2"
     ],
+    "minimum-stability" : "dev",
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.2.*",
-        "zfcommons/ZfcTwig" : "dev-master"
+        "zf-commons/zfc-twig" : "dev-master"
     },
     "require-dev" : {
-        "zendframework/zftool":"dev-master"
+        "zendframework/zftool":"dev-master",
+        "phpunit/phpunit": "3.8.*"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Calculator"     : ["module/Calculator/src","module/Calculator/test"]
+        }
     }
+
 }
