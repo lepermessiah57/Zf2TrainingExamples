@@ -22,7 +22,8 @@ class Module
     public function getServiceConfig(){
         return [
             'invokables' => [
-                'Calculator' => 'Calculator\Services\Calculator'
+                'Calculator' => 'Calculator\Services\Calculator',
+                'EchoAspect' => 'Calculator\Aspect\EchoAspect'
             ]
         ];
     }

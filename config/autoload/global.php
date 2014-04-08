@@ -12,5 +12,8 @@
  */
 
 return array(
-    'AopLogger' => array('WhiteList' => array(__DIR__ . "/../../module/Calculator"))
+    'AopLogger' => array(
+        'WhiteList' => array(__DIR__ . "/../../module/Calculator"),
+        'CustomAspects' => array('EchoAspect')
+    )
 );
