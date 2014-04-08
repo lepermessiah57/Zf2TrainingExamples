@@ -2,8 +2,13 @@
 
 namespace Calculator\Services;
 
+use AopLogger\Annotation\DebugMethod;
+
 class Calculator {
 
+    /**
+     * @DebugMethod
+     */
     public function calculateString($operation){
         $operationArray = explode(" " , $operation);
         $operandA = $operationArray[0];

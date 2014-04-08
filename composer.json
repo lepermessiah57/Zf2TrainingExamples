@@ -8,10 +8,17 @@
     ],
     "minimum-stability" : "dev",
     "homepage": "http://framework.zend.com/",
+    "repositories": [
+        {
+            "type":"vcs",
+            "url":"https://github.com/lepermessiah57/AopLogger.git"
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.2.*",
-        "zf-commons/zfc-twig" : "dev-master"
+        "zf-commons/zfc-twig" : "dev-master",
+        "vu/AopLogger" : "dev-master"
     },
     "require-dev" : {
         "zendframework/zftool":"dev-master",
