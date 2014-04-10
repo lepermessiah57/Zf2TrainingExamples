@@ -11,7 +11,7 @@
     "repositories": [
         {
             "type":"vcs",
-            "url":"https://github.com/lepermessiah57/AopLogger.git"
+            "url":"https://github.com/vuhl/AopLogger.git"
         }
     ],
     "require": {

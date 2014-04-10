@@ -23,7 +23,8 @@ class Module
         return [
             'invokables' => [
                 'Calculator' => 'Calculator\Services\Calculator',
-                'EchoAspect' => 'Calculator\Aspect\EchoAspect'
+                'EchoAspect' => 'Calculator\Aspect\EchoAspect',
+                'ControllerAspect' => 'Calculator\Aspect\ControllerAspect'
             ]
         ];
     }

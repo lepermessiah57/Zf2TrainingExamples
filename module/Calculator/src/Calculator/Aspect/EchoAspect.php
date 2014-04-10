@@ -15,20 +15,23 @@ class EchoAspect implements Aspect{
      * @Before("execution(public **->execute(*))")
      */
     public function beforeMethodExecution(MethodInvocation $invocation){
-        echo get_class($invocation->getThis()) . " Started at". $this->printTimeWithMicroSeconds()  ."<br/>";
+        $this->logTime($invocation," Started at ");
     }
 
     /**
      * @After("execution(public **->execute(*))")
      */
     public function aMethodExecution(MethodInvocation $invocation){
-        $now = new \DateTime();
-        echo get_class($invocation->getThis()) . " Finished at". $this->printTimeWithMicroSeconds()  ."<br/>";
+        $this->logTime($invocation," Finished at ");
     }
 
-    private function printTimeWithMicroSeconds(){
+    private function getTimeWithMicroSeconds(){
         list($usec, $sec) = explode(' ', microtime());
         return date('Y-m-d H:i:s', $sec) . $usec;
+    }
+
+    private function logTime(MethodInvocation $invocation, $message) {
+        echo get_class($invocation->getThis()) . $message . $this->getTimeWithMicroSeconds() . "<br/>";
     }
 
 } 
