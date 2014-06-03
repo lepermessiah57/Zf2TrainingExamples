@@ -94,6 +94,16 @@ return array(
 
                 )
             ),
+            'door_switchDoors' => array(
+                'type'=>'Literal',
+                'options'=> array(
+                    'route' => '/door/state',
+                    'defaults'=>array(
+                        'controller'=>'Door',
+                        'action' => 'switchDoors'
+                    )
+                )
+            ),
             'book' => array(
                 'type' => 'Segment',
                 'options' => array(
@@ -132,7 +142,8 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'HelloWorld'                   => 'Application\Controller\HelloWorldController',
-            'BookRest'                     => 'Application\Controller\BookRestController'
+            'BookRest'                     => 'Application\Controller\BookRestController',
+            'Door'                         => 'Application\Controller\DoorController'
 
         ),
     ),
