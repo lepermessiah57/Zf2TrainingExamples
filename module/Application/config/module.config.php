@@ -50,6 +50,19 @@ return array(
                     ),
                 ),
             ),
+            'favorite-book' => array(
+                'type'=>'Literal',
+                'options'=> array(
+                    'route' => '/book/favorite',
+                    'defaults' => array(
+                        'controller' => 'Book',
+                        'action' => 'getFavoriteBook'
+                    )
+                )
+            ),
+
+
+
             'helloWorld' => array(
                 'type' => 'Literal',
                 'options' => array(
@@ -119,8 +132,12 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'HelloWorld'                   => 'Application\Controller\HelloWorldController',
-            'Card'                   => 'Application\Controller\CardController'
+            'Card'                   => 'Application\Controller\CardController',
+            'Book'                         => 'Application\Controller\BookController',
         ),
+        'aliases' => array(
+            'Application\Controller\Book' => 'Book'
+        )
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
