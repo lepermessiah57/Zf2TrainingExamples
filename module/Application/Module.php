@@ -43,7 +43,11 @@ class Module
                 'HundredDoors' => 'Application\Services\HundredDoorsFactory'
             ],
             'invokables' => [
-                'DoorOpener' => 'Application\Services\DoorOpener'
+                'DoorOpener' => 'Application\Services\DoorOpener',
+                'Door' => 'Application\Models\Door'
+            ],
+            'shared' => [
+                'Door' => false
             ]
         ];
     }
